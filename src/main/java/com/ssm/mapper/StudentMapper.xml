@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.ssm.bean.Student">
+
+    <id column="studentId" jdbcType="VARCHAR" property="studentid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="mustTuition" jdbcType="INTEGER" property="musttuition" />
+    <result column="actualTuition" jdbcType="INTEGER" property="actualtuition" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="identity" jdbcType="VARCHAR" property="identity" />
+    <result column="classId" jdbcType="VARCHAR" property="classid" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="school" jdbcType="VARCHAR" property="school" />
+    <result column="education" jdbcType="VARCHAR" property="education" />
+    <result column="professional" jdbcType="VARCHAR" property="professional" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="identityAddress" jdbcType="VARCHAR" property="identityaddress" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="homeTelephone" jdbcType="VARCHAR" property="hometelephone" />
+    <result column="homeUser" jdbcType="VARCHAR" property="homeuser" />
+    <result column="referId" jdbcType="VARCHAR" property="referid" />
+  </resultMap>
+
+
+</mapper>

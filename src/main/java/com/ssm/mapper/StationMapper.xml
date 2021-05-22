@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.StationMapper">
+  <resultMap id="BaseResultMap" type="com.ssm.bean.Station">
+    <id column="stationId" jdbcType="VARCHAR" property="stationid" />
+    <result column="studentId" jdbcType="VARCHAR" property="studentid" />
+    <result column="flag" jdbcType="VARCHAR" property="flag" />
+    <result column="staffId" jdbcType="VARCHAR" property="staffid" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="beforeClassId" jdbcType="VARCHAR" property="beforeclassid" />
+    <result column="afterClassId" jdbcType="VARCHAR" property="afterclassid" />
+  </resultMap>
+
+</mapper>

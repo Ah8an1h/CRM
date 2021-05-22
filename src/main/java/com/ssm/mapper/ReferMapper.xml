@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.ReferMapper">
+  <resultMap id="BaseResultMap" type="com.ssm.bean.Refer">
+
+    <id column="referId" jdbcType="VARCHAR" property="referid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="staffId" jdbcType="VARCHAR" property="staffid" />
+    <result column="intentionLevel" jdbcType="VARCHAR" property="intentionlevel" />
+    <result column="classId" jdbcType="VARCHAR" property="classid" />
+    <result column="courseTypeId" jdbcType="VARCHAR" property="coursetypeid" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <select id="findBystatus" resultMap="BaseResultMap">
+    SELECT referId,name,telephone,qq,staffId,classId,courseTypeId,status
+    FROM crm_refer
+    WHERE status = #{status}
+  </select>
+
+
+    <insert id="addReferStu">
+        INSERT INTO crm_refer (referId,name,telephone,qq,intentionLevel,courseTypeId,classId,source,remark,staffId)
+        VALUES (#{referId},#{name},#{telephone},#{qq},#{intentionLevel},#{courseTypeId},#{classId},#{source},#{remark},#{staffId})
+    </insert>
+
+</mapper>

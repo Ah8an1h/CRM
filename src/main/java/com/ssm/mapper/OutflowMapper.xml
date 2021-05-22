@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.OutflowMapper">
+  <resultMap id="BaseResultMap" type="com.ssm.bean.Outflow">
+    <id column="runOffId" jdbcType="VARCHAR" property="runoffid" />
+    <result column="studentId" jdbcType="VARCHAR" property="studentid" />
+    <result column="staffId" jdbcType="VARCHAR" property="staffid" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="isRefund" jdbcType="VARCHAR" property="isrefund" />
+    <result column="refundAmount" jdbcType="VARCHAR" property="refundamount" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+
+
+</mapper>

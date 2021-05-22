@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.ClassMapper">
+  <resultMap id="BaseResultMap" type="com.ssm.bean.Class">
+
+    <id column="classId" jdbcType="VARCHAR" property="classid" />
+    <result column="courseTypeId" jdbcType="VARCHAR" property="coursetypeid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="beginTime" jdbcType="TIMESTAMP" property="begintime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="totalCount" jdbcType="INTEGER" property="totalcount" />
+    <result column="upgradeCount" jdbcType="INTEGER" property="upgradecount" />
+    <result column="changeCount" jdbcType="INTEGER" property="changecount" />
+    <result column="runoffCount" jdbcType="INTEGER" property="runoffcount" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="uploadFile" jdbcType="VARCHAR" property="uploadfile" />
+    <result column="uploadTime" jdbcType="TIMESTAMP" property="uploadtime" />
+    <result column="uploadPath" jdbcType="VARCHAR" property="uploadpath" />
+    <result column="uploadFilename" jdbcType="VARCHAR" property="uploadfilename" />
+  </resultMap>
+
+    <select id="findAllClassName" resultMap="BaseResultMap">
+      SELECT * FROM crm_class;
+    </select>
+
+
+</mapper>

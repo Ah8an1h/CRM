@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.StaffMapper">
+  <resultMap id="BaseResultMap" type="com.ssm.bean.Staff">
+
+    <id column="staffId" jdbcType="VARCHAR" property="staffid" />
+    <result column="loginName" jdbcType="VARCHAR" property="loginname" />
+    <result column="loginPwd" jdbcType="VARCHAR" property="loginpwd" />
+    <result column="staffName" jdbcType="VARCHAR" property="staffname" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="onDutyDate" jdbcType="TIMESTAMP" property="ondutydate" />
+    <result column="postId" jdbcType="VARCHAR" property="postid" />
+  </resultMap>
+
+  <update id="updatePwd">
+    UPDATE crm_staff SET loginPwd = #{newPwd} where loginName = #{loginName}
+  </update>
+
+
+  <select id="findByloginName" resultType="com.ssm.bean.Staff">
+      SELECT * FROM crm_staff WHERE loginName = #{loginName} and loginpwd=${loginpwd}
+  </select>
+
+</mapper>
