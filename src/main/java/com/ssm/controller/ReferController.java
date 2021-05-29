@@ -30,7 +30,6 @@ public class ReferController {
         modelAndView.addObject("result",ajaxResult);
         modelAndView.setViewName("refer/listRefer");
         return ajaxResult;
-        //测试
     }
 
 
@@ -54,6 +53,7 @@ public class ReferController {
         System.out.println(source);
         System.out.println(remark);
         int num = referService.addReferStu(name,telephone,qq,intentionLevel,classId,courseTypeId,source,remark);
+        System.out.println(num);
         return num;
     }
 }
