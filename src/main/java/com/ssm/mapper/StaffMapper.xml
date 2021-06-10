@@ -20,5 +20,8 @@
   <select id="findByloginName" resultType="com.ssm.bean.Staff">
       SELECT * FROM crm_staff WHERE loginName = #{loginName} and loginpwd=${loginpwd}
   </select>
+  <select id="findStaffNameById" resultMap="BaseResultMap">
+    SELECT staffName FROM crm_staff WHERE staffId=#{staffId}
+  </select>
 
 </mapper>

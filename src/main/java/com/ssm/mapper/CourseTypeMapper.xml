@@ -12,6 +12,9 @@
   <select id="findAllCourseType" resultMap="BaseResultMap">
     SELECT * FROM HaierBrother.crm_course_type
   </select>
+  <select id="findcourseName" resultMap="BaseResultMap">
+    SELECT courseName FROM crm_course_type WHERE courseTypeId=#{courseTypeId}
+  </select>
 
 
 </mapper>

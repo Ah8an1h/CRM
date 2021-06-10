@@ -38,7 +38,7 @@ public class StaffServiceImpl implements StaffService {
         }
         Staff staff1 = staffMapper.findByloginName(loginName, loginpwd);
         if (staff1 == null) {
-            ajaxResult.setMsg("用户不存在");
+            ajaxResult.setMsg("用户名或密码错误");
             ajaxResult.setCode("0");
             return ajaxResult;
         } else {

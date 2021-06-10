@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface CourseTypeMapper {
     List<CourseType> findAllCourseType();
+    CourseType findcourseName(@Param("courseTypeId")String courseTypeId);
 }

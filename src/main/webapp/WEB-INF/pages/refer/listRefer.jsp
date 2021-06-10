@@ -56,7 +56,7 @@
   </tr>
 </table>
 
-<table width="100%" border="1" >
+<table width="100%" border="1" id="tab">
   
   <tr class="henglan" style="font-weight:bold;">
 	<td width="80px" align="center">姓名</td>
@@ -71,74 +71,41 @@
 	<td width="8%" align="center">跟踪</td>
 	<td width="8%" align="center">录入学籍</td>
   </tr>
+
   <tr class="tabtd1">
-	    <td align="center">张三</td>
-	    <td align="center">13312341234</td>
-	    <td align="center">123456</td>
-	    <td align="center">
-	    	JavaEE/
-	    	J161001期
-	    </td>
-	    <td align="center">
-	    	咨询中
-	    </td>
-	    <td align="center">管理员</td>
-	    
-	    <!-- 查看 -->
-		<td width="8%" align="center">
-			<a href="/showRefer"><img src="${pageContext.request.contextPath}/images/button/view.gif" class="img"/></a>
-		</td>
-		
-		
-		<!-- 编辑 -->
-		<td width="8%" align="center">
-			<a href="/editRefer"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>
-		</td>
-		
-		<!-- 添加跟踪 -->
-		<td width="8%" align="center">
-			<a href="/addOrEditFollow"><img src="${pageContext.request.contextPath}/images/button/new.gif" class="img"/></a>
-		</td>
-		
-		<!-- 入学 -->
-		<td width="8%" align="center">
-			<a href="/addStudent"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>
-		</td>
-		
-	</tr>
-  <tr class="tabtd2">
-	    <td align="center">李四</td>
-	    <td align="center">13523452345</td>
-	    <td align="center">234567</td>
-	    <td align="center">
-	    	JavaEE/
-	    	J161001期
-	    </td>
-	    <td align="center">
-	    	咨询中
-	    </td>
-	    <td align="center">管理员</td>
-	    
-		<td width="8%" align="center">
-			<a href="${pageContext.request.contextPath}/refer/referAction_findById.action?referId=2c9091c14c79506c014c7981cf370000"><img src="${pageContext.request.contextPath}/images/button/view.gif" class="img"/></a>
-		</td>
-		
-		
-		<!-- 编辑 -->
-		<td width="8%" align="center">
-			<a href="${pageContext.request.contextPath}/refer/referAction_preEdit.action?referId=2c9091c14c79506c014c7981cf370000"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>
-		</td>
-		
-		<!-- 添加跟踪 -->
-		<td width="8%" align="center">
-			<a href="${pageContext.request.contextPath}/follow/followAction_preAddOrEdit.action?crmRefer.referId=2c9091c14c79506c014c7981cf370000"><img src="${pageContext.request.contextPath}/images/button/new.gif" class="img"/></a>
-		</td>
-		
-		<!-- 入学 -->
-		<td width="8%" align="center">
-			<a href="${pageContext.request.contextPath}/refer/referAction_preAddStudent.action?referId=2c9091c14c79506c014c7981cf370000"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>
-		</td>
-		
+	    <%--<td align="center">张三</td>--%>
+	    <%--<td align="center">13312341234</td>--%>
+	    <%--<td align="center">123456</td>--%>
+	    <%--<td align="center">--%>
+	    	<%--JavaEE/--%>
+	    	<%--J161001期--%>
+	    <%--</td>--%>
+	    <%--<td align="center">--%>
+	    	<%--咨询中--%>
+	    <%--</td>--%>
+	    <%--<td align="center">管理员</td>--%>
+
+	    <%--<!-- 查看 -->--%>
+		<%--<td width="8%" align="center">--%>
+			<%--<a href="/showRefer"><img src="${pageContext.request.contextPath}/images/button/view.gif" class="img"/></a>--%>
+		<%--</td>--%>
+
+
+		<%--<!-- 编辑 -->--%>
+		<%--<td width="8%" align="center">--%>
+			<%--<a href="/editRefer"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>--%>
+		<%--</td>--%>
+
+		<%--<!-- 添加跟踪 -->--%>
+		<%--<td width="8%" align="center">--%>
+			<%--<a href="/addOrEditFollow"><img src="${pageContext.request.contextPath}/images/button/new.gif" class="img"/></a>--%>
+		<%--</td>--%>
+
+		<%--<!-- 入学 -->--%>
+		<%--<td width="8%" align="center">--%>
+			<%--<a href="/addStudent"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>--%>
+		<%--</td>--%>
+
 	</tr>
 
 </table>
@@ -171,6 +138,30 @@
             },
             success:function(result){
                 console.log(result)
+				for (i=0;i<result.data.length;i++){
+					var td1 =$("<td align='center'></td>").text(result.data[i].name)
+					var td2= $("<td align='center'></td>").text(result.data[i].telephone)
+					var td3 =$("<td align='center'></td>").text(result.data[i].qq)
+					var td4 =$("<td align='center'></td>").text(result.data[i].courstName.coursename+"/"+result.data[i].className.name)
+                    var td5 = $("<td align='center'></td>")
+					if (result.data[i].status==1){
+					     td5.text("咨询中")
+					}
+					if (result.data[i].status==2){
+                         td5 .text("已报名")
+					}
+                    var td6 = $("<td align='center'></td>").text(result.data[i].staffName.staffname)
+
+                    var td7 = $("<td width='8%' align='center'><a href='/showRefer'><img src='${pageContext.request.contextPath}/images/button/view.gif' class='img'/></a></td>")
+                    var td8 = $("<td width='8%' align='center'><a href='/showRefer'><img src='${pageContext.request.contextPath}/images/button/modify.gif' class='img'/></a></td>")
+                    var td9 = $("<td width='8%' align='center'><a href='/showRefer'><img src='${pageContext.request.contextPath}/images/button/new.gif' class='img'/></a></td>")
+                    var td10 = $("<td width='8%' align='center'><a href='/showRefer'><img src='${pageContext.request.contextPath}/images/button/modify.gif' class='img'/></a></td>")
+
+                    var tr = $("<tr class='tabtd1'></tr>")
+                    var tab = $("#tab")
+					tab.append(tr.append(td1,td2,td3,td4,td5,td6,td7,td8,td9,td10))
+
+				}
             }
         })
 

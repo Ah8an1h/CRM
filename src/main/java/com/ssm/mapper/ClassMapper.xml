@@ -23,6 +23,9 @@
     <select id="findAllClassName" resultMap="BaseResultMap">
       SELECT * FROM crm_class;
     </select>
+  <select id="findClassNamebyId" resultMap="BaseResultMap">
+    SELECT name FROM crm_class WHERE classId =#{classId}
+  </select>
 
 
 </mapper>

@@ -14,4 +14,6 @@ public interface StaffMapper {
 
     int updatePwd(@Param("newPwd") String newPwd,
                   @Param("loginName") String loginName);
+
+    Staff findStaffNameById(@Param("staffId")Staff staffId);
 }

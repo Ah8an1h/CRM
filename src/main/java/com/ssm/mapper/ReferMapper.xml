@@ -15,6 +15,9 @@
     <result column="source" jdbcType="VARCHAR" property="source" />
     <result column="status" jdbcType="VARCHAR" property="status" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
+<association property="staffName" column="staffId" select="com.ssm.mapper.StaffMapper.findStaffNameById"></association>
+    <association property="ClassName" column="classId" select="com.ssm.mapper.ClassMapper.findClassNamebyId"></association>
+    <association property="courstName" column="courseTypeId" select="com.ssm.mapper.CourseTypeMapper.findcourseName"></association>
   </resultMap>
   <select id="findBystatus" resultMap="BaseResultMap">
     SELECT referId,name,telephone,qq,staffId,classId,courseTypeId,status
