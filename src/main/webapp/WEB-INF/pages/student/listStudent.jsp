@@ -25,7 +25,7 @@
     	<%--查询 --%>
 		<a href="javascript:void(0)" onclick="document.forms[0].submit();"><img src="${pageContext.request.contextPath}/images/button/gaojichaxun.gif" /></a>
     	<%--添加 --%>
-    	<a href="${pageContext.request.contextPath}/pages/student/addOrEditStudent.jsp">
+    	<a href="/addOrEditStudent">
     		<img src="${pageContext.request.contextPath}/images/button/tianjia.gif" />
     	</a>
     </td>
@@ -34,7 +34,7 @@
 </table>
 
 <!-- 查询条件：添加或选择马上查询 -->
-<form action="${pageContext.request.contextPath}/pages/student/listStudent.jsp" method="post">
+<form action="" method="post">
 	<table width="88%" border="0" style="margin: 20px;" >
 	  <tr>
 	    <td width="80px">查询条件：</td>
@@ -91,7 +91,7 @@
 		</td>
 		
 	    <td align="center">
-	    	<a href="${pageContext.request.contextPath}/pages/student/addOrEditStudent.jsp"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>
+	    	<a href="/addOrEditStudent"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>
 	    </td>
 	    
 	    <td align="center">

@@ -140,4 +140,12 @@ public class PageController {
     public String error(){
         return "error";
     }
+
+    @RequestMapping("/addOrEditStudent")
+    public String addOrEditStudent(){
+        return "student/addOrEditStudent";
+    }
+
+
+
 }
